@@ -3,11 +3,11 @@
     <div class="first_screen">
       <div class="header_bar">
         <a href="" id="advantages">Преимущества</a>
-        <a href="" id="periphery">Переферия</a>
+        <a href="" id="periphery">Тарифы</a>
         <a href="" id="news">Новости</a>
         <a href="" id="contact">Контакты</a>
+        <a href="/rent" id="rent">Забронировать</a>
       </div>
-      <img id="setting" src="../assets/setting.svg" />
       <img src="../assets/fon.png" />
       <img id="logo" src="../assets/logo.svg" />
       <div class="slang">
@@ -18,7 +18,7 @@
         <span id="slang_3">Производительность</span>
       </div>
     </div>
-    <div class="second_screen">
+    <div class="second_screen" name="advantages">
       <img src="../assets/fon_second.png" />
       <span id="name_space">ТОПОВОЕ ИГРОВОЕ ПРОСТРАНСТВО ДЛЯ ВСЕХ</span>
       <div class="advantage">
@@ -38,7 +38,7 @@
         <span id="wifi">Бесплатный WIFI для клиентов</span>
       </div>
     </div>
-    <div class="third_screen">
+    <div class="third_screen" name="tarif">
       <img src="../assets/fon_third.png" />
       <span id="name_iron">ИГРОВОЕ ЖЕЛЕЗО</span>
       <div class="block_rooms">
@@ -53,46 +53,6 @@
         <img id="console_room" src="../assets/console_room.png" />
         <div class="price_console"><span>149₽ час</span></div>
       </div>
-     <div class="description" v-if="room = 1">
-        <span id="name_room"> {{ name }}</span>
-        <img
-          id="rhomb_room"
-          class="rhomb_room"
-          src="../assets/rhomb_blue.svg"
-        />
-        <span id="text_room_1">{{ text_1 }}</span>
-        <img
-          id="rhomb_room"
-          class="rhomb_room"
-          src="../assets/rhomb_blue.svg"
-        />
-        <span id="text_room_2">{{ text_2 }}</span>
-        <img
-          id="rhomb_room"
-          class="rhomb_room"
-          src="../assets/rhomb_blue.svg"
-        />
-        <span id="text_room_3">{{ text_3 }}</span>
-        <img
-          id="rhomb_room"
-          class="rhomb_room"
-          src="../assets/rhomb_blue.svg"
-        />
-        <span id="text_room_4">{{ text_4 }}</span>
-        <img
-          id="rhomb_room"
-          class="rhomb_room"
-          src="../assets/rhomb_blue.svg"
-        />
-
-        <span id="text_room_5">{{ text_5 }}</span>
-        <img
-          id="rhomb_room"
-          class="rhomb_room"
-          src="../assets/rhomb_blue.svg"
-        />
-        <span id="text_room_6">{{ text_6 }}</span>
-      </div>-->
     </div>
     <div class="four_screen">
       <img src="../assets/four_screen.png" />
@@ -133,18 +93,19 @@ export default {
 body {
   overflow: hidden;
 }
-#setting {
+#rent {
   position: absolute;
-  width: 2%;
-  height: 2%;
-  left: 92%;
-  top: 3%;
+  left: 100%;
+  top: 2%;
+
+  color: #ffffff;
+  text-decoration: none;
 }
 .header_bar {
   position: absolute;
-  width: 60%;
+  width: 80%;
   height: 5%;
-  left: 20%;
+  left: 10%;
   top: 2%;
 
   font-family: "Roboto" sans-serif;
@@ -156,11 +117,12 @@ body {
 
   align-items: center;
   text-align: center;
-}
+  word-wrap:break-word;
+  }
 
 #advantages {
   position: absolute;
-  width: 10.5%;
+  width: 17%;
   left: 0%;
 
   text-decoration: none;
@@ -169,7 +131,7 @@ body {
 
 #periphery {
   position: absolute;
-  width: 10.5%;
+  width: 15%;
 
   left: 25.5%;
 
@@ -592,9 +554,12 @@ body {
     left: 69%;
   }
   .header_bar {
-    font-size: 24px;
+    font-size: 18px;
     left: 7.5%;
     width: 80%;
+
+  }
+  #advantage{
   }
   #name_space {
     font-size: 32px;
@@ -652,6 +617,18 @@ body {
   .description {
     font-size: 9.5px;
   }
+  #advantages{
+    width: 20%;
+  }
+  #news{
+    left: 50%;
+  }
+  #contact{
+    width: 12%;
+  }
+  #rent{
+    
+  }
   #date {
     font-size: 9.5px;
     left: 0%;
@@ -671,10 +648,7 @@ body {
   .header_bar {
     font-size: 14px;
     left: 10%;
-    width: 80%;
-  }
-  #setting {
-    top: 2%;
+    width: 70%;
   }
   #name_space {
     font-size: 22px;
@@ -718,13 +692,25 @@ body {
   #name_iron {
     font-size: 22px;
   }
-  
 }
 
 @media screen and (min-width: 691px) {
 }
 
 @media screen and (max-width: 690px) {
+  #advantages{
+    width: 25%;
+  }
+  #periphery{
+    width: 20%;
+  }
+  #news{
+    width: 15%;
+  }
+  #contact{
+    left: 70%;
+    width: 20%;
+  }
   #date {
     top: 35%;
   }
@@ -843,6 +829,10 @@ body {
   .price_ordinary span {
     font-size: 9px;
   }
+  #rent{
+    top: 50%;
+    left: 2%;
+  }
   
 }
 
@@ -868,9 +858,9 @@ body {
     font-size: 9px;
     width: 80%;
   }
-  #setting {
-    left: 85%;
-    top: 1.5%;
+  #rent {
+    left: 3.5%;
+    top: 40%;
   }
   .advantage {
     left: 20%;

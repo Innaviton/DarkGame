@@ -2,7 +2,9 @@
   <div>
     <div class="base">
       <img src="../assets/fon_rent.png" />
+      <a href="/">
       <img id="logo" src="../assets/logo_rent.svg" />
+      </a>
       <div class="form_rent">
         <span id="user_name">Имя</span>
         <input type="text" id="name_input" placeholder="Ваше Имя" />
@@ -33,14 +35,12 @@
         <input type="time" id="time_game_start" />
         <input type="time" id="time_game_end" />
         <div class="place">
-          <span id="place">Выберите место</span>
-          <div id="place_standart" v-show="room = 1">
-
+          <!--<span id="place">Выберите место</span>-->
+          <div id="place_standart">
           </div>
         </div>
       </div>
     </div>
-        <button @click="OnSubmit()">Бронь</button>
     <foot />
   </div>
 </template>
@@ -54,7 +54,6 @@ export default {
         foot,
     },
     data:{
-      room =1,
     return: {
       books: [],
       addBooking: {
@@ -126,7 +125,8 @@ export default {
 #user_email,
 #type_room,
 #time_game,
-#place {
+#place
+ {
   position: absolute;
   width: 100%;
   font-family: "Roboto" sans-serif;
@@ -310,5 +310,23 @@ input[type="radio"] {
   line-height: 39px;
 
   color: rgba(255, 255, 255, 0.17);
+}
+
+@media screen and (max-width: 1280px){
+#user_name,
+#user_phone,
+#user_email,
+#type_room,
+#time_game,
+#vip_span,
+#standart_span,
+#console_span,
+#place{
+        font-size: 24px;
+    }
+
+#time_game_end{
+  left: 20%;
+}
 }
 </style>
