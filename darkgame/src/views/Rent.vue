@@ -3,7 +3,7 @@
     <div class="base">
       <img src="../assets/fon_rent.png" />
       <a href="/">
-      <img id="logo" src="../assets/logo_rent.svg" />
+        <img id="logo" src="../assets/logo_rent.svg" />
       </a>
       <div class="form_rent">
         <span id="user_name">Имя</span>
@@ -36,8 +36,6 @@
         <input type="time" id="time_game_end" />
         <div class="place">
           <!--<span id="place">Выберите место</span>-->
-          <div id="place_standart">
-          </div>
         </div>
       </div>
     </div>
@@ -46,44 +44,42 @@
 </template>
 
 <script>
-import foot from '../components/footer.vue';
-import axios from 'axios';
+import foot from "../components/footer.vue";
+import axios from "axios";
 
 export default {
-    components: {
-        foot,
-    },
-    data:{
+  components: {
+    foot,
+  },
+  data: {
     return: {
       books: [],
       addBooking: {
-        Name: '',
-        Number: '',
-        Email: '',
-        Type: ''
+        Name: "",
+        Number: "",
+        Email: "",
+        Type: "",
       },
-    }
+    },
   },
-  
+
   methods: {
-  addBook(payload){
-  const path = '';
-  axios.post(path, payload)
-    .then(() => {
-     console.log("Пост запрос выполнен");
-    })
-    .catch((error) => {
-      // eslint-отключение следующей строки
-      console.log(error);
-      
-    });
-  },
-  initForm() {
-      this. Name= '';
-      this.Number = '';
-      this.Email = '',
-      this.Type = ''
-     
+    addBook(payload) {
+      const path = "";
+      axios
+        .post(path, payload)
+        .then(() => {
+          console.log("Пост запрос выполнен");
+        })
+        .catch((error) => {
+          // eslint-отключение следующей строки
+          console.log(error);
+        });
+    },
+    initForm() {
+      this.Name = "";
+      this.Number = "";
+      (this.Email = ""), (this.Type = "");
     },
     onSubmit(evt) {
       evt.preventDefault();
@@ -92,19 +88,21 @@ export default {
       if (this.addBookForm.read[0]) read = true;
       const payload = {
         Name: this.Name,
-        Number:this.Number,
-        Email:this.Email,
-        occude:this.Type
+        Number: this.Number,
+        Email: this.Email,
+        occude: this.Type,
       };
       this.addBook(payload);
       this.initForm();
-    }
-       
-  }
+    },
+  },
 };
 </script>
 
 <style  scoped>
+body {
+  height: 1080px;
+}
 .base {
   width: 100%;
 }
@@ -125,8 +123,7 @@ export default {
 #user_email,
 #type_room,
 #time_game,
-#place
- {
+#place {
   position: absolute;
   width: 100%;
   font-family: "Roboto" sans-serif;
@@ -155,7 +152,7 @@ export default {
   top: 90%;
 }
 
-.place{
+.place {
   position: relative;
   width: 100%;
   top: 110%;
@@ -251,12 +248,12 @@ input[type="radio"] {
   color: #ffffff;
 }
 
-#place_standart{
+#place_standart {
   position: absolute;
   width: 42%;
-  height: 47.5%; 
+  height: 47.5%;
   left: 28%;
-  
+
   background: rgba(0, 0, 0, 0.1);
 }
 ::-webkit-input-placeholder {
@@ -312,21 +309,60 @@ input[type="radio"] {
   color: rgba(255, 255, 255, 0.17);
 }
 
-@media screen and (max-width: 1280px){
-#user_name,
-#user_phone,
-#user_email,
-#type_room,
-#time_game,
-#vip_span,
-#standart_span,
-#console_span,
-#place{
-        font-size: 24px;
-    }
 
-#time_game_end{
-  left: 20%;
-}
+@media screen and (max-width: 1280px) {
+  #user_name,
+  #user_phone,
+  #user_email,
+  #type_room,
+  #time_game,
+  #place {
+    font-size: 24px;
+  }
+
+  #vip_span {
+    left: 55%;
+    font-size: 20px;
+  }
+  #standart_span {
+    left: 15%;
+    font-size: 20px;
+  }
+  #console_span {
+    left: 95%;
+    font-size: 20px;
+  }
+  #time_game_end {
+    left: 20%;
+  }
+
+  @media screen and (min-width: 601px) {
+  }
+  @media screen and (max-width: 600px) {
+    ::-webkit-input-placeholder {
+      font-size: 18px;
+    }
+  }
+  @media screen and (min-width: 401px) {
+  }
+
+  @media screen and (max-width: 400px) {
+    #console_span,
+    #standart_span,
+    #vip_span {
+      font-size: 16px;
+    }
+    .radio_room span {
+      top: -5px;
+    }
+    input[type="radio"] {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+    }
+    #time_game_end {
+      left: 50%;
+    }
+  }
 }
 </style>
